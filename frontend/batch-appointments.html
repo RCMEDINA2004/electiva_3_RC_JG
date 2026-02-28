@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Citas en Lote - VetClinic Manager</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <nav>
+        <div class="nav-brand">
+            <span class="logo-icon">🐾</span>
+            <h1>VetClinic</h1>
+        </div>
+        <div class="nav-links">
+            <a href="dashboard.html">Dashboard</a>
+            <a href="owners.html">Dueños</a>
+            <a href="pets.html">Mascotas</a>
+            <a href="veterinarians.html">Veterinarios</a>
+            <a href="appointments.html">Citas</a>
+            <a href="batch-appointments.html" class="active">Citas Lote</a>
+            <a href="reports.html">Reportes</a>
+        </div>
+        <div class="nav-actions">
+            <span class="user-badge">Admin</span>
+            <button class="outline sm" id="logoutBtn">Salir</button>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="page-header">
+            <h2>⚡ Creación de Citas en Lote</h2>
+        </div>
+
+        <div class="alert alert-info">
+            💡 Esta vista utiliza <strong>Promise.all</strong> para crear múltiples citas simultáneamente, demostrando
+            operaciones batch asíncronas.
+        </div>
+
+        <div class="batch-form-container">
+            <div id="batchEntries"></div>
+
+            <div style="display: flex; gap: 0.75rem; margin-top: 1rem;">
+                <button class="secondary" onclick="addEntry()">+ Agregar Cita</button>
+                <button class="primary" id="submitBatch" onclick="submitBatch()">⚡ Crear Todas (Promise.all)</button>
+            </div>
+        </div>
+
+        <div id="batchResult" style="margin-top: 1.5rem;"></div>
+    </div>
+
+    <script src="js/batch-appointments.js"></script>
+</body>
+
+</html>

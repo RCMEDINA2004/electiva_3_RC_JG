@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Citas - VetClinic Manager</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <nav>
+        <div class="nav-brand">
+            <span class="logo-icon">🐾</span>
+            <h1>VetClinic</h1>
+        </div>
+        <div class="nav-links">
+            <a href="dashboard.html">Dashboard</a>
+            <a href="owners.html">Dueños</a>
+            <a href="pets.html">Mascotas</a>
+            <a href="veterinarians.html">Veterinarios</a>
+            <a href="appointments.html" class="active">Citas</a>
+            <a href="batch-appointments.html">Citas Lote</a>
+            <a href="reports.html">Reportes</a>
+        </div>
+        <div class="nav-actions">
+            <span class="user-badge">Admin</span>
+            <button class="outline sm" id="logoutBtn">Salir</button>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="page-header">
+            <h2>📅 Gestión de Citas</h2>
+            <button class="primary" onclick="openAddModal()">+ Nueva Cita</button>
+        </div>
+
+        <div id="appointmentTableContainer"></div>
+    </div>
+
+    <!-- Appointment Modal -->
+    <div id="appointmentModal" class="modal">
+        <div class="modal-content">
+            <span class="close"
+                onclick="document.getElementById('appointmentModal').style.display='none'">&times;</span>
+            <h2 id="modalTitle">➕ Nueva Cita</h2>
+            <form id="appointmentForm">
+                <input type="hidden" id="appointmentId">
+                <div class="form-group">
+                    <label for="petId">Mascota</label>
+                    <select id="petId" required></select>
+                </div>
+                <div class="form-group">
+                    <label for="veterinarianId">Veterinario</label>
+                    <select id="veterinarianId" required></select>
+                </div>
+                <div class="form-group">
+                    <label for="date">Fecha</label>
+                    <input type="date" id="date" required>
+                </div>
+                <div class="form-group">
+                    <label for="time">Hora</label>
+                    <input type="time" id="time" required>
+                </div>
+                <div class="form-group">
+                    <label for="reason">Motivo</label>
+                    <textarea id="reason" placeholder="Motivo de la consulta" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="status">Estado</label>
+                    <select id="status">
+                        <option value="scheduled">Programada</option>
+                        <option value="completed">Completada</option>
+                        <option value="cancelled">Cancelada</option>
+                    </select>
+                </div>
+                <button type="submit" class="primary btn-block">Guardar</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="js/appointments.js"></script>
+</body>
+
+</html>

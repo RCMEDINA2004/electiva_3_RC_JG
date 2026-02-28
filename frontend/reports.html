@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reportes - VetClinic Manager</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <nav>
+        <div class="nav-brand">
+            <span class="logo-icon">🐾</span>
+            <h1>VetClinic</h1>
+        </div>
+        <div class="nav-links">
+            <a href="dashboard.html">Dashboard</a>
+            <a href="owners.html">Dueños</a>
+            <a href="pets.html">Mascotas</a>
+            <a href="veterinarians.html">Veterinarios</a>
+            <a href="appointments.html">Citas</a>
+            <a href="batch-appointments.html">Citas Lote</a>
+            <a href="reports.html" class="active">Reportes</a>
+        </div>
+        <div class="nav-actions">
+            <span class="user-badge">Admin</span>
+            <button class="outline sm" id="logoutBtn">Salir</button>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="page-header">
+            <h2>📊 Reportes</h2>
+        </div>
+
+        <div class="filter-bar">
+            <div class="form-group">
+                <label for="filterType">Filtrar por</label>
+                <select id="filterType">
+                    <option value="all">Todas las citas</option>
+                    <option value="veterinarian">Por Veterinario</option>
+                    <option value="pet">Por Mascota</option>
+                    <option value="status">Por Estado</option>
+                </select>
+            </div>
+            <div class="form-group" id="filterValueGroup" style="display:none;">
+                <label for="filterValue">Seleccione</label>
+                <select id="filterValue"></select>
+            </div>
+            <button class="primary" onclick="applyFilter()">🔍 Filtrar</button>
+        </div>
+
+        <div class="stats-grid" id="reportStats"></div>
+
+        <div id="reportTableContainer"></div>
+    </div>
+
+    <script src="js/reports.js"></script>
+</body>
+
+</html>

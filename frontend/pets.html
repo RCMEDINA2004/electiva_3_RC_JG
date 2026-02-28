@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mascotas - VetClinic Manager</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <nav>
+        <div class="nav-brand">
+            <span class="logo-icon">🐾</span>
+            <h1>VetClinic</h1>
+        </div>
+        <div class="nav-links">
+            <a href="dashboard.html">Dashboard</a>
+            <a href="owners.html">Dueños</a>
+            <a href="pets.html" class="active">Mascotas</a>
+            <a href="veterinarians.html">Veterinarios</a>
+            <a href="appointments.html">Citas</a>
+            <a href="batch-appointments.html">Citas Lote</a>
+            <a href="reports.html">Reportes</a>
+        </div>
+        <div class="nav-actions">
+            <span class="user-badge">Admin</span>
+            <button class="outline sm" id="logoutBtn">Salir</button>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="page-header">
+            <h2>🐕 Gestión de Mascotas</h2>
+            <button class="primary" onclick="openAddModal()">+ Nueva Mascota</button>
+        </div>
+
+        <div id="petGrid" class="grid-container"></div>
+    </div>
+
+    <!-- Pet Modal -->
+    <div id="petModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="document.getElementById('petModal').style.display='none'">&times;</span>
+            <h2 id="modalTitle">➕ Nueva Mascota</h2>
+            <form id="petForm">
+                <input type="hidden" id="petId">
+                <div class="form-group">
+                    <label for="petName">Nombre</label>
+                    <input type="text" id="petName" placeholder="Nombre de la mascota" required>
+                </div>
+                <div class="form-group">
+                    <label for="species">Especie</label>
+                    <select id="species" required>
+                        <option value="">Seleccione...</option>
+                        <option value="Perro">Perro</option>
+                        <option value="Gato">Gato</option>
+                        <option value="Ave">Ave</option>
+                        <option value="Reptil">Reptil</option>
+                        <option value="Otro">Otro</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="breed">Raza</label>
+                    <input type="text" id="breed" placeholder="Raza">
+                </div>
+                <div class="form-group">
+                    <label for="age">Edad (años)</label>
+                    <input type="number" id="age" placeholder="Edad" min="0">
+                </div>
+                <div class="form-group">
+                    <label for="ownerId">Dueño</label>
+                    <select id="ownerId" required></select>
+                </div>
+                <div class="form-group">
+                    <label for="petPhoto">Foto</label>
+                    <input type="file" id="petPhoto" accept="image/*">
+                </div>
+                <button type="submit" class="primary btn-block">Guardar</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="js/pets.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dueños - VetClinic Manager</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <nav>
+        <div class="nav-brand">
+            <span class="logo-icon">🐾</span>
+            <h1>VetClinic</h1>
+        </div>
+        <div class="nav-links">
+            <a href="dashboard.html">Dashboard</a>
+            <a href="owners.html" class="active">Dueños</a>
+            <a href="pets.html">Mascotas</a>
+            <a href="veterinarians.html">Veterinarios</a>
+            <a href="appointments.html">Citas</a>
+            <a href="batch-appointments.html">Citas Lote</a>
+            <a href="reports.html">Reportes</a>
+        </div>
+        <div class="nav-actions">
+            <span class="user-badge">Admin</span>
+            <button class="outline sm" id="logoutBtn">Salir</button>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="page-header">
+            <h2>👤 Gestión de Dueños</h2>
+            <button class="primary"
+                onclick="document.getElementById('ownerModal').style.display='block'; resetForm();">+ Nuevo
+                Dueño</button>
+        </div>
+
+        <div id="ownerTableContainer"></div>
+    </div>
+
+    <!-- Owner Modal -->
+    <div id="ownerModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="document.getElementById('ownerModal').style.display='none'">&times;</span>
+            <h2 id="modalTitle">➕ Nuevo Dueño</h2>
+            <form id="ownerForm">
+                <input type="hidden" id="ownerId">
+                <div class="form-group">
+                    <label for="firstName">Nombre</label>
+                    <input type="text" id="firstName" placeholder="Nombre" required>
+                </div>
+                <div class="form-group">
+                    <label for="lastName">Apellido</label>
+                    <input type="text" id="lastName" placeholder="Apellido" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Teléfono</label>
+                    <input type="text" id="phone" placeholder="Teléfono" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" placeholder="Email">
+                </div>
+                <div class="form-group">
+                    <label for="address">Dirección</label>
+                    <input type="text" id="address" placeholder="Dirección">
+                </div>
+                <button type="submit" class="primary btn-block">Guardar</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="js/owners.js"></script>
+</body>
+
+</html>

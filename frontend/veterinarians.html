@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Veterinarios - VetClinic Manager</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <nav>
+        <div class="nav-brand">
+            <span class="logo-icon">🐾</span>
+            <h1>VetClinic</h1>
+        </div>
+        <div class="nav-links">
+            <a href="dashboard.html">Dashboard</a>
+            <a href="owners.html">Dueños</a>
+            <a href="pets.html">Mascotas</a>
+            <a href="veterinarians.html" class="active">Veterinarios</a>
+            <a href="appointments.html">Citas</a>
+            <a href="batch-appointments.html">Citas Lote</a>
+            <a href="reports.html">Reportes</a>
+        </div>
+        <div class="nav-actions">
+            <span class="user-badge">Admin</span>
+            <button class="outline sm" id="logoutBtn">Salir</button>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="page-header">
+            <h2>👨‍⚕️ Gestión de Veterinarios</h2>
+            <button class="primary" onclick="openAddModal()">+ Nuevo Veterinario</button>
+        </div>
+
+        <div id="vetGrid" class="grid-container"></div>
+    </div>
+
+    <!-- Vet Modal -->
+    <div id="vetModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="document.getElementById('vetModal').style.display='none'">&times;</span>
+            <h2 id="modalTitle">➕ Nuevo Veterinario</h2>
+            <form id="vetForm">
+                <input type="hidden" id="vetId">
+                <div class="form-group">
+                    <label for="firstName">Nombre</label>
+                    <input type="text" id="firstName" placeholder="Nombre" required>
+                </div>
+                <div class="form-group">
+                    <label for="lastName">Apellido</label>
+                    <input type="text" id="lastName" placeholder="Apellido" required>
+                </div>
+                <div class="form-group">
+                    <label for="specialty">Especialidad</label>
+                    <select id="specialty" required>
+                        <option value="">Seleccione...</option>
+                        <option value="Medicina General">Medicina General</option>
+                        <option value="Cirugía">Cirugía</option>
+                        <option value="Dermatología">Dermatología</option>
+                        <option value="Cardiología">Cardiología</option>
+                        <option value="Oftalmología">Oftalmología</option>
+                        <option value="Traumatología">Traumatología</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Teléfono</label>
+                    <input type="text" id="phone" placeholder="Teléfono">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" placeholder="Email">
+                </div>
+                <button type="submit" class="primary btn-block">Guardar</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="js/veterinarians.js"></script>
+</body>
+
+</html>
