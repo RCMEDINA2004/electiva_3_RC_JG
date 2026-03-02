@@ -2,9 +2,9 @@
 
 ## `README.md`
 
-# Gestor de Nómina - App Educativa
+# Gestor de citas veterinarias - App Amigable con los animales 
 
-Esta es una aplicación de ejemplo para un curso de programación backend. Es un gestor de nómina básico construido con Node.js, Express, TypeScript, Sequelize y PostgreSQL.
+Esta es una aplicación de ejemplo para un curso de programación backend. Es un gestor de citas veterinarias básico construido con Node.js, Express, TypeScript, Sequelize y PostgreSQL.
 
 ## Requisitos Previos
 
@@ -35,10 +35,10 @@ Esta es una aplicación de ejemplo para un curso de programación backend. Es un
 5.  **Acceder a la aplicación:**
     Abre tu navegador en `http://localhost:3000`.
 
-## Credenciales por Defecto
+## Credenciales Azure
 
--   **Usuario:** `admin`
--   **Contraseña:** `password123`
+-   **Usuario:** `rcarlosmedinap23@gmail.com`
+-   **Contraseña:** `AzureAdmin123!`
 
 ## Estructura del Proyecto
 
